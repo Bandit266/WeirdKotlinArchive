@@ -14,6 +14,8 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
     
     <application
         android:name=".PrivacySMSApplication"
@@ -27,15 +29,23 @@
         android:theme="@style/Theme.PrivacySMS"
         tools:targetApi="31">
         
-        <!-- Main Activity -->
+        <!-- Auth Activity (Launcher) -->
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".ui.AuthActivity"
             android:exported="true"
+            android:theme="@style/Theme.PrivacySMS"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        
+        <!-- Main Activity -->
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize">
             
             <!-- Default SMS app intents -->
             <intent-filter>
@@ -65,6 +75,31 @@
         <activity
             android:name=".ui.SettingsActivity"
             android:parentActivityName=".ui.MainActivity" />
+        
+        <!-- Profile Activity -->
+        <activity
+            android:name=".ui.ProfileActivity"
+            android:parentActivityName=".ui.MainActivity" />
+        
+        <!-- Contacts Activity -->
+        <activity
+            android:name=".ui.ContactsActivity"
+            android:parentActivityName=".ui.MainActivity" />
+        
+        <!-- Vault Activity -->
+        <activity
+            android:name=".ui.VaultActivity"
+            android:parentActivityName=".ui.MainActivity" />
+        
+        <!-- Change PIN Activity -->
+        <activity
+            android:name=".ui.ChangePinActivity"
+            android:parentActivityName=".ui.SettingsActivity" />
+        
+        <!-- Change Pattern Activity -->
+        <activity
+            android:name=".ui.ChangePatternActivity"
+            android:parentActivityName=".ui.SettingsActivity" />
         
         <!-- SMS Receiver -->
         <receiver
