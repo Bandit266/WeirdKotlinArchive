@@ -112,13 +112,16 @@ com.privacy.sms/
 
 ### Build Instructions
 
+#### Option 1: Build Locally
+
 1. **Clone the project**:
    ```bash
-   # The project files are already structured in the PrivacySMS directory
+   git clone https://github.com/Bandit266/WeirdKotlinArchive.git
+   cd WeirdKotlinArchive
    ```
 
 2. **Open in Android Studio**:
-   - File → Open → Select the PrivacySMS directory
+   - File → Open → Select the WeirdKotlinArchive directory
 
 3. **Sync Gradle**:
    - Android Studio will automatically sync Gradle dependencies
@@ -134,6 +137,28 @@ com.privacy.sms/
    ./gradlew installDebug
    # or use Android Studio's Run button
    ```
+
+#### Option 2: Use GitHub Actions (Automatic Build)
+
+This repository includes GitHub Actions CI/CD for automatic APK building:
+
+1. **Push to GitHub**:
+   - The workflow automatically builds the APK on every push to `master` or `main` branch
+
+2. **Download the APK**:
+   - Go to your repository: https://github.com/Bandit266/WeirdKotlinArchive
+   - Click on **Actions** tab
+   - Select the latest workflow run
+   - Scroll down to **Artifacts** section
+   - Click **app-debug** to download the APK
+   - The APK will be available for 30 days
+
+3. **Install the APK**:
+   - Transfer the APK to your Android device
+   - Enable "Install from Unknown Sources" in your device settings
+   - Open the APK file and install
+
+**Note**: GitHub Actions builds run automatically on every commit. You can also trigger manually by going to Actions → Build Android APK → Run workflow.
 
 ### Configuration
 
